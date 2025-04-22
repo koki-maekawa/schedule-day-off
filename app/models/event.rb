@@ -14,12 +14,12 @@ class Event < ApplicationRecord
 
   def start_time_sleep_validate
     schedule = Schedule.find(schedule_id)
-    errors.add(:base, '寝ている時間です') if sleep_time?(schedule, start_time)
+    errors.add(:base, "寝ている時間です") if sleep_time?(schedule, start_time)
   end
 
   def end_time_sleep_validate
     schedule = Schedule.find(schedule_id)
-    errors.add(:base, '寝ている時間です') if sleep_time?(schedule, end_time)
+    errors.add(:base, "寝ている時間です") if sleep_time?(schedule, end_time)
   end
 
   private

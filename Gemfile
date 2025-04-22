@@ -6,8 +6,8 @@ gem "rails", "~> 7.2.0"
 gem "sprockets-rails"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
-#CSS Bundler
-gem 'cssbundling-rails'
+# CSS Bundler
+gem "cssbundling-rails"
 # Use Sass to process CSS
 gem "sassc-rails"
 # Use postgresql as the database for Active Record
@@ -24,43 +24,43 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # 日本語化
-gem 'rails-i18n'
-gem 'enum_help'
+gem "rails-i18n"
+gem "enum_help"
 
 # ログイン機能
-gem 'sorcery'
+gem "sorcery"
 
 # 検索機能
-gem 'ransack'
+gem "ransack"
 
 # ページネーション
-gem 'kaminari'
+gem "kaminari"
 
 # 画像アップロード
-gem 'carrierwave'
-gem 'mini_magick'
+gem "carrierwave"
+gem "mini_magick"
 
 # メタタグの設定
-gem 'meta-tags'
+gem "meta-tags"
 
 # 管理画面
-gem 'rails_admin', '~> 3.0'
+gem "rails_admin", "~> 3.0"
 
 # 権限管理
-gem 'cancancan'
+gem "cancancan"
 
 # 環境別定数管理
-gem 'config'
+gem "config"
 
 # 環境変数
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
 # Googleログイン
-gem 'googleauth'
+gem "googleauth"
 
 group :production do
   # Amazon S3を使用するためのパッケージ
-  gem 'fog-aws'
+  gem "fog-aws"
 end
 
 group :development, :test do

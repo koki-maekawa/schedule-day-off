@@ -3,14 +3,14 @@
   User.create!(
     name: 'ニックネーム',
     email: Faker::Internet.unique.email,
-		role: 0,
-		password: 'password',
-		password_confirmation: 'password',
-		avatar: open("./app/assets/images/default_icon.png")
+    role: 0,
+    password: 'password',
+    password_confirmation: 'password',
+    avatar: open("./app/assets/images/default_icon.png")
   )
 
 user = User.find_by(name: 'ニックネーム')
-10.times{
+10.times {
   Schedule.create!(
     schedule_title: '休日',
     assumed_number_people: 1,
@@ -19,7 +19,7 @@ user = User.find_by(name: 'ニックネーム')
     user: user,
   )
 
-  
+
 Schedule.all.each do |schedule|
   Event.create!(
     start_time: '09:00',

@@ -19,7 +19,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def default_url(*_args)
     #   # For Rails 3.1+ asset pipeline compatibility:
     #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    'default_icon.png'
+    "default_icon.png"
     #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
@@ -35,11 +35,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # end
   version :user_index do
-    process resize_to_fit: [40, 40]
+    process resize_to_fit: [ 40, 40 ]
   end
 
   version :user_show do
-    process resize_to_fit: [80, 80]
+    process resize_to_fit: [ 80, 80 ]
   end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
