@@ -1,0 +1,135 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    signup: 'ユーザー登録'
+    logout: 'ログアウト'
+    password_reset: 'パスワードリセット'
+    cansel: 'キャンセル'
+    submit_mail: '送信'
+    message:
+      require_login: 'ログインしてください'
+      not_authorized: "権限がありません"
+    next: '次へ'
+    previous: '戻る'
+    terms: "利用規約"
+    privacy: "プライバシーポリシー"
+    contact: "お問い合わせ"
+    schedules: "みんなのスケジュール"
+    month_rank: "月間ランキング"
+    my_page: "マイページ"
+    create: "スケジュール作成"
+    people: '想定人数'
+    get_up: '起床時間'
+    sleep: '就寝時間'
+    money: '総金額'
+    search: '検索'
+    try: 'やってみた'
+    favorite: 'いいね'
+    schedule: 'スケジュール'
+    placeholder:
+      assumed_number_people: '指定無し'
+      tag_names: '空白スペースで区切って入力してください'
+      event_title: '〜をする'
+      store: 'URL'
+      price: '000円'
+      comment: '〜がおすすめです'
+      search: '検索ワード'
+  time:
+    formats:
+      default: "%H:%M"
+  static_pages:
+    top:
+      title: '休日スケジュール'
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms_of_service:
+      title: '利用規約'
+  users:
+    new:
+      title: '会員登録'
+      email: 'メールアドレスで登録'
+      guest: 'ゲストで登録'
+      have_account: 'アカウントをお持ちの方'
+    show:
+      edit_user: 'ユーザーの編集'
+      no_schedule: "%{name}はスケジュールを作成していません"
+      no_favorite_schedule: "%{name}はいいねをしていません"
+      no_try_schedule: "%{name}はやってみたをしていません"
+    edit:
+      title: 'ユーザーの編集'
+    register_mail:
+      title: 'メールアドレス登録'
+    create:
+      success: "ユーザー「%{name}」を作成しました"
+      fail: 'ユーザーの作成に失敗しました'
+    update:
+      success: "ユーザー「%{name}」を更新しました"
+      fail: "ユーザー「%{name}」の更新に失敗しました"
+    destroy:
+      success: "ユーザー「%{name}」を削除しました"
+  user_sessions:
+    new:
+      title: 'ログイン'
+      email: 'メールアドレスでログイン'
+      guest: 'ゲストでログイン'
+      do_not_have_account: 'アカウントをお持ちでない'
+    login_mail:
+      title: 'メールアドレスでログイン'
+      foget_password: 'パスワードをお忘れの方はこちら'
+    create:
+      success: "%{name}でログインに成功しました"
+      fail: 'ログインに失敗しました'
+    guest_login:
+      success: 'ゲストでログインに成功しました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  google_login_api:
+    callback:
+      success: "%{name}でログインに成功しました"
+      fail: 'ログインに失敗しました'
+  password_resets:
+    new:
+      title: 'パスワードリセット'
+    create:
+      success: 'パスワードリセット手順を送信しました'
+    update:
+      success: 'パスワードを変更しました'
+      fail: 'パスワードの変更に失敗しました'
+  schedules:
+    index:
+      popular_tags: '人気タグ'
+    new:
+      title: 'スケジュール作成'
+    show: 
+      delete_confirm: '削除しますか？'
+      create_event: 'イベント追加'
+      reference_event: 'イベントを探す'
+    rank:
+      title: '月間ランキング'
+      favorite_title: 'いいね部門'
+      try_title: 'やってみた部門'
+      rank: "第%{rank}位"
+    create:
+      success: "スケジュール「%{title}」を作成しました"
+      fail: 'スケジュールの作成に失敗しました'
+    update:
+      success: "スケジュール「%{title}」を更新しました"
+      fail: "スケジュール「%{title}」の更新に失敗しました"
+    destroy:
+      success: "スケジュール「%{title}」を削除しました"
+  events:
+    show:
+      event_title: 'タイトル'
+      store: '店舗'
+      price: '価格'
+      comment: 'コメント'
+    reference:
+      create_event: 'イベント追加'
+  views:
+    pagination:
+      first: '最初'
+      last: '最後'
+      previous: '←'
+      next: '→'
+      truncate: '...'

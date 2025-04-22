@@ -1,0 +1,38 @@
+<div class="flex justify-center py-8">
+    <%= search_form_for q, url: schedules_path do |f| %>
+        <div class="flex justify-center">
+            <%= f.search_field :schedule_title_or_events_event_title_or_events_comment_cont, class: 'form-control input input-bordered input-primary shadow-xl max-w-xs mr-1', placeholder: t('defaults.placeholder.search') %>
+            <%= f.submit t('defaults.search'), class: 'btn btn-primary text-white' %>
+        </div>
+        <div class="flex justify-center">
+            <div class="dropdown">
+                <%= f.label :get_up_time, tabindex: '0', class: 'btn btn-outline btn-primary bg-white m-1' %>
+                <div tabindex="0" class="dropdown-content menu p-2 shadow-xl bg-primary">
+                    <div class="flex">
+                        <%= f.time_field :get_up_time_gteq, class: 'text-base md:text-xl' %>
+                        <span>〜</span>
+                        <%= f.time_field :get_up_time_lteq, class: 'text-base md:text-xl' %>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown dropdown-end">
+                <%= f.label :sleep_time, tabindex: '0', class: 'btn btn-outline btn-primary bg-white m-1' %>
+                <div tabindex="0" class="dropdown-content menu p-2 shadow bg-primary">
+                    <div class="flex">
+                    <%= f.time_field :sleep_time_gteq, class: 'text-base md:text-xl' %>
+                    <span>〜</span>
+                    <%= f.time_field :sleep_time_lteq, class: 'text-base md:text-xl' %>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown dropdown-end">
+                <%= f.label :assumed_number_people, tabindex: '0', class: 'btn btn-outline btn-primary bg-white m-1' %>
+                <div tabindex="0" class="dropdown-content menu p-2 shadow bg-primary">
+                    <div class="flex">
+                        <%= f.select :assumed_number_people_eq, Schedule.assumed_number_people.keys.map.with_index { |k, i| [t("enums.schedule.assumed_number_people.#{k}"), i] }, { include_blank: t('defaults.placeholder.assumed_number_people') }, { class: 'text-bese md:text-xl' } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
