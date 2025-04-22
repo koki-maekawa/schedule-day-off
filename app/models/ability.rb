@@ -7,18 +7,18 @@ class Ability
     user ||= User.new
 
     case user.role
-    when 'admin'
+    when "admin"
       can :access, :rails_admin
       can :manage, :all
-    when 'general'
+    when "general"
       can :manage, :all
       cannot :access, :rails_admin
-    when 'guest'
+    when "guest"
       can :manage, :all
       cannot :access, :rails_admin
       cannot :update, User
     else
-      can :read, [Schedule, Event, User], published: true
+      can :read, [ Schedule, Event, User ], published: true
     end
   end
 end

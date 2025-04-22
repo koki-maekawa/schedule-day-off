@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def show; end
 
   def reference
-    @events = Event.all.order('RANDOM()').page(params[:page]).without_count.per(5)
+    @events = Event.all.order("RANDOM()").page(params[:page]).without_count.per(5)
   end
 
   def new

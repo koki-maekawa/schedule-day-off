@@ -4,14 +4,14 @@ class SchedulesController < ApplicationController
   def index
     @q = if (tag_name = params[:tag_name])
            Schedule.with_tag(tag_name).ransack(params[:q])
-         else
+    else
            Schedule.ransack(params[:q])
-         end
+    end
     @schedules = @q.result(distinct: true).preload(%i[user tags
-                                                      events]).order('created_at desc').page(params[:page]).per(20)
+                                                      events]).order("created_at desc").page(params[:page]).per(20)
 
     schedule_tag_ids = Tagging.group(:tag_id)
-                              .order('count(schedule_id) DESC')
+                              .order("count(schedule_id) DESC")
                               .limit(20)
                               .pluck(:tag_id)
 
@@ -32,9 +32,9 @@ class SchedulesController < ApplicationController
   def create
     @schedule = current_user.schedules.new(schedule_params)
     if @schedule.save_with_tags(params[:schedule][:tag_names].split(/[[:blank:]]+/).uniq)
-      redirect_to schedule_path(@schedule), success: t('.success', title: @schedule.schedule_title)
+      redirect_to schedule_path(@schedule), success: t(".success", title: @schedule.schedule_title)
     else
-      flash.now[:error] = t('.fail')
+      flash.now[:error] = t(".fail")
       render :new, status: :unprocessable_entity
     end
   end
@@ -42,16 +42,16 @@ class SchedulesController < ApplicationController
   def update
     @schedule.assign_attributes(schedule_params)
     if @schedule.save_with_tags(params[:schedule][:tag_names].split(/[[:blank:]]+/).uniq)
-      redirect_to schedule_path(@schedule), success: t('.success', title: @schedule.schedule_title)
+      redirect_to schedule_path(@schedule), success: t(".success", title: @schedule.schedule_title)
     else
-      flash.now[:error] = t('.fail', title: @schedule.schedule_title)
+      flash.now[:error] = t(".fail", title: @schedule.schedule_title)
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @schedule.destroy
-    redirect_to schedules_path, success: t('.success', title: @schedule.schedule_title)
+    redirect_to schedules_path, success: t(".success", title: @schedule.schedule_title)
   end
 
   def rank

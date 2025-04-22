@@ -1,132 +1,102 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
-ruby "3.1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.4"
-
+gem "rails", "~> 7.2.0"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
-
-#CSS Bundler
-gem 'cssbundling-rails'
-
+# CSS Bundler
+gem "cssbundling-rails"
 # Use Sass to process CSS
 gem "sassc-rails"
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
-
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
-
+gem "puma", "~> 6.0"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
 # 日本語化
-gem 'rails-i18n'
-gem 'enum_help'
+gem "rails-i18n"
+gem "enum_help"
 
 # ログイン機能
-gem 'sorcery'
+gem "sorcery"
 
 # 検索機能
-gem 'ransack'
+gem "ransack"
 
 # ページネーション
-gem 'kaminari'
+gem "kaminari"
 
 # 画像アップロード
-gem 'carrierwave'
-gem 'mini_magick'
+gem "carrierwave"
+gem "mini_magick"
 
 # メタタグの設定
-gem 'meta-tags'
+gem "meta-tags"
 
 # 管理画面
-gem 'rails_admin', '~> 3.0'
+gem "rails_admin", "~> 3.0"
 
 # 権限管理
-gem 'cancancan'
+gem "cancancan"
 
 # 環境別定数管理
-gem 'config'
+gem "config"
 
 # 環境変数
-gem 'dotenv-rails'
+gem "dotenv-rails"
 
 # Googleログイン
-gem 'googleauth'
+gem "googleauth"
 
 group :production do
   # Amazon S3を使用するためのパッケージ
-  gem 'fog-aws'
+  gem "fog-aws"
 end
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  # デバックツール
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
-  # テスティングフレームワーク
-  gem 'rspec-rails'
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", require: false
 
-  # テスト用データ作成
-  gem 'factory_bot_rails'
-end
+  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  gem "rubocop-rails-omakase", require: false
+  gem "rubocop-rspec", require: false
 
-group :test do
-  # ブラウザ操作シミュレーション
-  gem 'capybara'
+  # erb styling
+  gem "erb_lint", require: false
+  gem "htmlbeautifier", require: false
 
-  # webドライバの自動インストール、アップデート
-  gem 'webdrivers'
+  # test
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+
+  # N+1
+  gem "bullet"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  # mail check
+  gem "letter_opener_web"
+end
 
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
-
-  # Lint
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec'
-  gem 'erb_lint', require: false
-
-  # N+1問題検出
-  gem 'bullet'
-
-  # エラー画面の整形
-  gem 'better_errors'
-
-  # ブラウザ上のエラー画面でirb
-  gem 'binding_of_caller'
-
-  # ダミーデータの作成
-  gem 'faker'
-
-  # コード補完、ドキュメント提供
-  gem 'solargraph'
-
-  # 開発環境でのメール受信
-  gem 'letter_opener_web', '~> 1.0'
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "capybara-playwright-driver"
+  gem "faker"
 end

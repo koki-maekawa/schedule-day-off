@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
 
-  # Compress CSS using a preprocessor.
+   # Compress CSS using a preprocessor.
    config.assets.css_compressor = nil
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -71,11 +71,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    domain: 'gmail.com',
+    address: "smtp.gmail.com",
+    domain: "gmail.com",
     port: 587,
-    user_name: ENV['SEND_MAIL'],
-    password: ENV['SEND_MAIL_PASSWORD'],
+    user_name: ENV["SEND_MAIL"],
+    password: ENV["SEND_MAIL_PASSWORD"],
     authentication: :login
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

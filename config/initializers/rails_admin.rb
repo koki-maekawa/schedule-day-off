@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
     require_login
   end
   config.current_user_method(&:current_user)
-  config.parent_controller = 'ApplicationController'
+  config.parent_controller = "ApplicationController"
 
    ## == CancanCan ==
    config.authorize_with :cancancan
